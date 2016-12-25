@@ -1,0 +1,333 @@
+<head>
+    <meta charset="utf-8">
+    <title>Smart Tomatoes - Your premiere movies website</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
+          media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css" media="screen">
+        body {
+            background-color: rgba(250, 250, 250, 0.84);
+        }
+
+        nav {
+            margin-bottom: 20px;
+            background-color: rgba(10, 10, 10, 0.84);
+        }
+
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fix for firefox */
+        #trailer-video-container {
+            height: 60vh;
+        }
+    </style>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal({
+                dismissible: true, // Modal can be dismissed by clicking outside of the modal
+                opacity: .5, // Opacity of modal background
+                in_duration: 300, // Transition in duration
+                out_duration: 200, // Transition out duration
+                ready: function (modal, trigger) { // Callback for Modal open.
+                    var trailerYouTubeId = trigger.attr('data-trailer-youtube-id');
+                    var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+                    $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+                        'id': 'trailer-video',
+                        'type': 'text-html',
+                        'src': sourceUrl,
+                        'frameborder': 0
+                    }));
+                },
+                complete: function () { // Callback for Modal close
+                    $("#trailer-video-container").empty();
+                }
+            });
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+            $('.card').parent().hide().first().show("fast", function showNext() {
+                $(this).next("div").show("fast", showNext);
+            });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<!-- Trailer Video Modal -->
+<div id="trailer" class="modal">
+    <div class="scale-media" id="trailer-video-container">
+    </div>
+</div>
+
+<!-- NavBar -->
+<nav>
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Smart Tomatoes</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="FtbM_W9iNjg" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//nHXiMnWUAUba2LZ0dFkNDVdvJ1o.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Underworld: Blood Wars</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="frdj1zb9sMY" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Rogue One: A Star Wars Story</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="CmRih_VtVAs" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Suicide Squad</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="43NWzay3W4s" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//5N20rQURev5CNDcMjHVUZhpoCNC.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Captain America: Civil War</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="q-RBA0xoaWU" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//cparcxTFuHdlSOP3MJOpN7Ec9NB.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">The Magnificent Seven</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="hEJnMQG9ev8" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//kqjL17yufvn9OVLyXYpvtyrFfak.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Mad Max: Fury Road</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="bvu-zlR5A8Q" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//jjBgi2r5cRt36xF6iNUEhzscEcb.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Jurassic World</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="vZ734NWnAHA" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//tvSlBzAdRE29bZe5yYWrJ2ds137.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Star Wars</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="4I8rVcSQbic" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//hU0E130tsGdsYa4K9lc3Xrn5Wyt.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Now You See Me 2</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="_gBnmKOixDM" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//lFSSLTlFozwpaGlO31OoUeirBgQ.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Jason Bourne</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="2LIQ2-PZBC8" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//y31QB9kn3XSudA15tV7UWQ9XLuW.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Guardians of the Galaxy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="qUtn5yHJRTk" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//lg5Cepv35WwuDS7lo4Oz91j7N0k.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Assassin's Creed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="rmC3ZhIHHi4" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//oXV2ayQYUQfHwpuMdWnZF0Geng5.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Spectral</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="xbNBB1D37U8" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//oFOG2yIRcluKfTtYbzz71Vj9bgz.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Inferno</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="QF903RaKLvs" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//tgfRDJs5PFW20Aoh1orEzuxW8cN.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Mechanic: Resurrection</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="sGbxmsDFVnE" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//weUSwMdQIa3NaXVzwUoIIcAi85d.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Star Wars: The Force Awakens</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="-k4knGRY8jA" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//zSouWWrySXshPCT4t3UKCQGayyo.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">X-Men: Apocalypse</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="HSzx-zryEgM" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//xfWac8MTYDxujaxgPVcRD9yZaul.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Doctor Strange</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="ONHBaC-pfsk" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//inVq3FRqcYIRl2la8iZikYYxFNR.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Deadpool</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-image movie-tile waves-effect waves-block waves-light"
+                     data-trailer-youtube-id="w3ugHP-yZXw" data-target="trailer" data-toggle="modal">
+                    <img src="https://image.tmdb.org/t/p/w500//4qnJ1hsMADxzwnOmnwjZTNp0rKT.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">Ghostbusters</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
