@@ -37,6 +37,6 @@ this is a work in progress, feel free to submit a fix if you find it.
 
 ## License
 
->You can check out the full license [here](https://github.com/mikelfcosta/fresh-tomatoes/blob/master/LICENSE.md)
+>You can check out the full license [here](https://github.com/mikelfcosta/smart-tomatoes/blob/master/LICENSE.md)
 
 This project is licensed under the terms of the **MIT** license.
