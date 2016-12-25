@@ -16,7 +16,7 @@ class GetMovie:
 
     def __init__(self):
         self.parameters = {
-            "api_key": '8d59411a0fb2cdbb33e8ab49634700d0'  # Insert your API Key here
+            "api_key": '<<YOUR-API-KEY-HERE>>'  # Insert your API Key here
         }
 
     # Search by Genre method.
