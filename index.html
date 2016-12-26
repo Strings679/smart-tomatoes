@@ -1,3 +1,4 @@
+
 <head>
     <meta charset="utf-8">
     <title>Smart Tomatoes - Your premiere movies website</title>
@@ -28,6 +29,16 @@
         /* Fix for firefox */
         #trailer-video-container {
             height: 60vh;
+        }
+
+        /* Fix for Bootstrap Flexbox */
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .row .col {
+            margin: 0 !important;
         }
     </style>
 
@@ -60,7 +71,7 @@
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-            $('.card').parent().hide().first().show("fast", function showNext() {
+            $('.card').parent().css("display", "flex").hide().first().fadeIn("fast", function showNext() {
                 $(this).next("div").show("fast", showNext);
             });
         });
@@ -294,7 +305,7 @@
         <div class="col s12 m6 l4">
             <div class="card">
                 <div class="card-image movie-tile waves-effect waves-block waves-light"
-                     data-trailer-youtube-id="HSzx-zryEgM" data-target="trailer" data-toggle="modal">
+                     data-trailer-youtube-id="3xoxeCWpZyU" data-target="trailer" data-toggle="modal">
                     <img src="https://image.tmdb.org/t/p/w500//xfWac8MTYDxujaxgPVcRD9yZaul.jpg">
                 </div>
                 <div class="card-content">

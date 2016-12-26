@@ -29,6 +29,21 @@ main_page_head = '''
             width: 100%;
             height: 100%;
         }
+
+        /* Fix for firefox */
+        #trailer-video-container {
+            height: 60vh;
+        }
+
+        /* Fix for Bootstrap Flexbox */
+        .row {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .row .col {
+            margin: 0 !important;
+        }
     </style>
 
     <!--Import jQuery before materialize.js-->
@@ -60,7 +75,7 @@ main_page_head = '''
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-            $('.card').parent().hide().first().show("fast", function showNext() {
+            $('.card').parent().css("display", "flex").hide().first().fadeIn("fast", function showNext() {
                 $(this).next("div").show("fast", showNext);
             });
         });
