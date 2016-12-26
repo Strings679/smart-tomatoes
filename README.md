@@ -4,6 +4,10 @@ This is a simple project made with **Python** for the _Movie Trailer Website_ pr
 It contains Python Scripts to generate the html file of a Website, that contains movies
 obtained from [The Movie DB](https://www.themoviedb.org/) through their API. 
 
+## Preview
+
+Preview the file at: https://mikelfcosta.github.io/smart-tomatoes/
+
 ## Setup
 
 1. Clone this repository: `git clone https://github.com/mikelfcosta/smart-tomatoes`
